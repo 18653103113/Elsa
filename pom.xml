@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 整个项目的parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.cvicse.msa</groupId>
+    <artifactId>Elsa</artifactId>
+    <packaging>pom</packaging>  <!-- 父pom的packaging必须为pom，一般ide自动生成 -->
+    <version>1.0-SNAPSHOT</version>
+    <name>Elsa</name>
+    <description>这是一个多模块的springboot开发框架Demo</description>
+    <!--模块：这里声明多个子模块，不用手动自己去写，因为创建的时候是会自动生成的- -->
+    <modules>
+        <module>Elsa-example</module>
+    </modules>
+
+    <!--属性变量配置-->
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!--加载依赖管理-->
+    <!--注意：如果使用dependencyManagement,只是对版本进行管理，不会直接引入jar  -->
+    <!--是为了在这里配置版本,为了让子模块pom或者本pom的直接dependencies不单独配置版本 -->
+    <!--如果没有版本,会先到这里找版本号,以免版本冲突  -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.0.5.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--公共模块加载,非公共模块请一般放在子pom进行加载-->
+    <dependencies>
+        <!-- 项目热部署，详见Idea&Maven笔记 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration> <!-- 项目热部署，详见Idea&Maven笔记 -->
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
