@@ -21,6 +21,7 @@
     <!--模块：这里声明多个子模块，不用手动自己去写，因为创建的时候是会自动生成的- -->
     <modules>
         <module>Elsa-example</module>
+        <module>Elsa-jpa</module>
     </modules>
 
     <!--属性变量配置-->
