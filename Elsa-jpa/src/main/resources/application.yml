@@ -5,7 +5,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 123456
+    password: 1234567
 
   # jpa的配置后 jpa.hibernate.ddl-auto= update,在其他低版本的SpringBoot中也有使用spring.jpa.properties.hibernate.hbm2ddl.auto=create-drop 这种配置的，具体根据版本而定；该配置的主要作用是：自动创建、更新、验证数据库结构；
   jpa:
