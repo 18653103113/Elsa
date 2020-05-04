@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Elsa</artifactId>
+        <groupId>com.cvicse.msa</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>Elsa-jpa</artifactId>
+
+    <!-- 整合Spring Data JPA -->
+    <!-- 使用Spring-data-jpa这样的技术，它实现了模板Dao层，只需要在Dao，通过继承一个接口，就可轻松完成增删改查 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!--此处加载子模块对子模块的依赖-->
+        <!-- *** -->
+    </dependencies>
+
+</project>
