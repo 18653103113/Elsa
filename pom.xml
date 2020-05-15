@@ -22,6 +22,7 @@
     <modules>
         <module>Elsa-example</module>
         <module>Elsa-jpa</module>
+        <module>Elsa-druid</module>
     </modules>
 
     <!--属性变量配置-->
@@ -45,6 +46,17 @@
 
     <!--公共模块加载,非公共模块请一般放在子pom进行加载-->
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
         <!-- 项目热部署，详见Idea&Maven笔记 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -52,9 +64,17 @@
             <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
         </dependency>
 
+        <!-- 引入Mysql驱动 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.2.4.RELEASE</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

@@ -2,13 +2,16 @@
 # 注意不同的SpringBoot版本jpa配置的方法可能会有不同
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8
+    # driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.101.62:3306/mysql?useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 12345678
+    password: Cvicse#2020
 
   # jpa的配置后 jpa.hibernate.ddl-auto= update,在其他低版本的SpringBoot中也有使用spring.jpa.properties.hibernate.hbm2ddl.auto=create-drop 这种配置的，具体根据版本而定；该配置的主要作用是：自动创建、更新、验证数据库结构；
   jpa:
+    database: MySQL
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
     hibernate:
       ddl-auto: update
       # 1. create：每次加载hibernate时都会删除上一次的生成的表，然后根据你的model类再重新来生成新表，哪怕两次没有任何改变也要这样执行，这就是导致数据库表数据丢失的一个重要原因（一般只会在第一次创建时使用）

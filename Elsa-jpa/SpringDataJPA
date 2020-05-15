@@ -1,0 +1,23 @@
+Spring Boot Jpa 是 Spring 基于 ORM 框架、Jpa 规范的基础上封装的一套 Jpa 应用框架，可使开发者用极简的代码即可实现对数据的访问和操作。
+它提供了包括增删改查等在内的常用功能，且易于扩展！
+学习并使用 Spring Data Jpa 可以极大提高开发效率！默认底层使用的ORM框架是Hibernate；
+
+
+本模块模块主要是集成SpringDataJPA，并提供了简单的示例；
+本模块关于SpringDataJPA实现的大致思路如下：
+1. 在pom中导入依赖，在yml中添加数据源；
+1. 创建实体类，并采用注解映射实体表；
+2. 创建Dao接口并继承JpaRepository，实现自定义增删改查方法；
+3. 编写测试代码通过dao接口的调用，即可实现实体表的创建、修改，以及数据的增删改查；
+
+
+关于SpringDataJPA具体的技术细节，需自行研究：
+1. 使用方法查询快速完成数据读取，JPA很大的特性是根据方法名进行解析查询；
+2. 使用RequestPage完成单表分页&排序；
+3. 使用@Query完成自定义SQL；
+4. Repository方法的Null值处理；
+5. 使用命名参数@Param；
+6. 自定义修改删除@Modifying；
+7. 多表关联，@OneToMany、@ManyToMany、...；
+8. Repository接口、CrudRepository接口、PagingAndSortingRepository接口、JpaRepository接口、JpaSpecificationExecutor接口；
+9. 同源数据库的多源支持&异构数据库多源支持；

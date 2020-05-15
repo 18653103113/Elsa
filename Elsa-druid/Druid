@@ -1,0 +1,20 @@
+本模块主要是集成Druid连接池；
+
+pom.xml中两种Druid的引入方式，本模块采用第一种；
+application.properties配置了单个数据源Druid连接池；
+application.yml配置了多个数据源Druid连接池，包括Druid（MySQL）、Oracle、Postgress三个数据源，可以根据实际情况调整或扩展；
+
+com.cvicse.msa.druid目录下两个文件：
+DruidDataSourceConfigurer：是第二种druid引入方式时，必须写的Druid数据源配置类；本模块只是提供了此类，但无需使用；
+MultiDataSourceConfigurer：是多数据源时，数据源配置类；
+
+在工程pom中引入spring-jdbc
+
+
+关于多数据源：
+1. 本模块中主要是不同类型数据库配置多数据源，也可以同类型数据库配置多数据源，用于读写分离等；
+1. 实现动态数据源切换；
+2. 同一个数据源中保证事务
+
+
+

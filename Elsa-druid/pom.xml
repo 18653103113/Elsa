@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>Elsa</artifactId>
+        <groupId>com.cvicse.msa</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>Elsa-druid</artifactId>
+
+    <dependencies>
+        <!-- 整合druid依赖 -->
+        <!--Druid两种依赖引入都可以，但是配置的方式有些不同，使用第二种时依赖项，在配置的时候需要创建Druid的配置类（详见com.cvicse.msa.druid.DruidDataSourceConfigurer），而第一种依赖项则不需要;-->
+
+        <!--第一种：druid-spring-boot-starter-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.17</version>
+        </dependency>
+
+        <!--第二种：直接druid-->
+        <!--
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.17</version>
+        </dependency>
+        -->
+
+
+
+    </dependencies>
+
+</project>
